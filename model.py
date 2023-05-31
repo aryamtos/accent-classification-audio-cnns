@@ -39,3 +39,4 @@ class Conv1d1Lstm(nn.Module):
         x = self.dense3(x)
         #print(f"Dense3:{x.shape}")
         return x
+
