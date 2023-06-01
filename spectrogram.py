@@ -9,7 +9,9 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.layers.experimental import preprocessing
 import tensorflow_io as tfio
+import os
 
+SAMPLE_RATE = 16000
 class Spectrogram:
 
     def __init__(self,MAX_WAVE_SIZE):
@@ -72,8 +74,8 @@ class Spectrogram:
                 spectrogram = tf.abs(spectrogram)
                 return spectrogram
         
-    def waveform_spectrogram_spotify(self, sample):
-                spectro_fn = lambda f: self.compute_mel_spectrogram(self.load_and_preprocess_waveform(f))
+    def waveform_spectrogram(self, sample):
+                spectro_fn = lambda f: self.process_spectrogram(self.load_and_preprocess_waveform(f))
                 spectro_shape = spectro_fn(sample).shape
                 return spectro_shape, spectro_fn
 
