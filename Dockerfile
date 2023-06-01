@@ -4,7 +4,7 @@ WORKDIR /accent-classification-audio
 
 COPY requirements.txt ./requirements.txt
 
-RUN apt-get update && apt-get install -y python3-pip
+RUN apt-get update && apt-get install -y libsndfile1
 
 RUN pip3 install -r requirements.txt
 
