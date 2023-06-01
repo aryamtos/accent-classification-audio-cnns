@@ -7,7 +7,7 @@ Wave
 soundfile
 tensorflow
 tensorflow-io
-sklearn
+scikit-learn
 glob2
 pathlib
 
