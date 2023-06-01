@@ -23,7 +23,7 @@ class LoadAndPreprocessToModel():
     def get_lists_filenames_and_labels(self):
         list_filenames = []
         list_labels = []
-        self.verify_directory_exists()
+        #self.verify_directory_exists()
         data_dir = pathlib.Path(self.directory)
         classes = sorted([item.name for item in data_dir.glob('*') if item.is_dir()])
         print(f'Classes:{classes}')
@@ -55,7 +55,7 @@ class LoadAndPreprocessToModel():
     def encoder_labels(self,labels):
 
         labels = labels.reshape((len(labels),1))
-        enc = OneHotEncoder(sparse=False)
+        enc = OneHotEncoder(sparse_output=False)
         onehot = enc.fit_transform(labels)
         return onehot, enc
     
