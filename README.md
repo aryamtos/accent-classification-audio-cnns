@@ -1,35 +1,27 @@
-<h2>Accent Classification Audio - Brazillian Portuguese</h2>
+# Accent Classification - Brazillian Portuguese
 
+# **Installation**
 
-##Installation
+- **Local :**
 
-Clone the repository 
+```bash
+git clone https://github.com/aryamtos/accent-classification-audio.git
+pip3 install -r requirements.txt
+```
 
-*Local
+- **Conda Environment** 🐍
 
-```md
-    git clone https://github.com/aryamtos/accent-classification-audio.git
-    pip3 install -r requirements.txt
-    ```
-    
-## Docker image
+```bash
+git clone https://github.com/aryamtos/accent-classification-audio.git
+conda create --name myenv
+conda install --file requirements.txt
+conda list
+```
 
-In the repository:
+### Docker image 🐳
 
-1.
-    
-    ```md
-        docker build -t accent:latest .
-    ``
-    
-2.
-
-   ```md
-        docker images
-    ``
-3.
-
-   ```md
-        docker run accent:latest
-    ``
-
+```bash
+docker build -t accent:latest .
+docker images
+docker run accent:latest 
+```
