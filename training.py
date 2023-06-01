@@ -6,19 +6,17 @@ import numpy as np
 from torch.utils.data import random_split
 from torch.utils.data import Subset
 from sklearn.model_selection import KFold 
-from pythorchtools import EarlyStopping
+from pytorchtools import EarlyStopping 
+import torch.nn as nn
+
+#Pytorchtools based on : Bjarten repository-https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
 
 class TrainingModel:
 
     def __init__(self,
+                 model,
                  trainloader,
-                 val_dataloader,
-                 optimizer,
-                 criterion,
-                 batch_size,
-                 n_epochs,
-                 patience,
-                 loss_function):
+                 val_dataloader):
         self.trainloader = trainloader
         self.val_dataloader = val_dataloader
         self.optimizer = optim.SGD(model.parameters(), lr=0.01)
@@ -63,7 +61,7 @@ class TrainingModel:
 
             epoch_len = len(str(self.n_epochs))
 
-            print_msg = (f'[{epoch:>{epoch_len}}/{n_epochs:>{epoch_len}}]' +
+            print_msg = (f'[{epoch:>{epoch_len}}/{self.n_epochs:>{epoch_len}}]' +
                          f'train_loss:{train_loss:.5f}'+
                          f'valid_loss:{valid_loss:.5f}')
             print(print_msg)
