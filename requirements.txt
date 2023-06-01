@@ -1,0 +1,13 @@
+torch torchvision
+torchaudio
+librosa
+numpy
+Wave
+soundfile
+tensorflow
+tensorflow-io
+sklearn
+os
+glob2
+pathlib
+
