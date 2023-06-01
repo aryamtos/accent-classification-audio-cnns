@@ -34,9 +34,8 @@ class SpectrogramDataset(Dataset):
 class SplitAndComputeWeights():
 
     def __init__(self,spectro):
-        self.spectro
-  
-    
+        self.spectro = spectro
+
     def __len__(self):
         return len(self.spectro)
 
@@ -69,6 +68,9 @@ class SplitAndComputeWeights():
         test_dataloader = torch.utils.data.DataLoader(test_ds,batch_size=32, num_workers=0)
 
         return trainloader, val_dataloader,test_dataloader
+
+
+
     
 
     

@@ -76,11 +76,7 @@ class Spectrogram:
                 spectro_fn = lambda f: self.compute_mel_spectrogram(self.load_and_preprocess_waveform(f))
                 spectro_shape = spectro_fn(sample).shape
                 return spectro_shape, spectro_fn
-    
-    def waveform_spectrogram_coraa(self, sample):
-                spectro_fn = lambda f: self.compute_mel_spectrogram(self.load_preprocess_coraa(f))
-                spectro_shape = spectro_fn(sample).shape
-                return spectro_shape, spectro_fn
+
     def model_conv1dlstm(self,input_shape,num_labels):
 
             return Conv1d1Lstm(input_shape,num_labels)
