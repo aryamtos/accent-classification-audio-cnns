@@ -1,10 +1,12 @@
-torch 
+torch
 torchvision
 torchaudio
 librosa
 numpy
 Wave
 soundfile
+matplotlib
+seaborn
 tensorflow
 tensorflow-io
 scikit-learn
