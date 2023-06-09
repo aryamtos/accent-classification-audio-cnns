@@ -2,7 +2,7 @@ from prepare_dataset import LoadAndPreprocessToModel
 from model import Conv1d1Lstm
 from spectrogram import Spectrogram
 from dataloader import SpectrogramDataset, SplitAndComputeWeights
-from training import TrainingModel
+from training import TrainingModel, EvaluationModel
 import sys
 import os
 
@@ -26,5 +26,8 @@ if __name__ == "__main__":
     
     tr_model = TrainingModel(model,trainloader,val_dataloader)
     model, train_loss, valid_loss = tr_model.train_model(model)
+    eval_model = EvaluationModel(model,trainloader,val_dataloader,test_dataloader)
+    eval_model.evaluation()
+    eval_model.confusion_matrix_plot()
 
 
