@@ -55,7 +55,7 @@ class CleaningAudiosDataset(object):
     def process_audio_files(self):
         self.separate_voice_from_music()
         self.rename_and_copy(self.save_local_folder)
-        self.remove_low_volume(threshold=0)  # Define o threshold de volume desejado
+        self.remove_low_volume(threshold=0) 
 
     def main(self):
         self.process_audio_files()
