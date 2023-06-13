@@ -81,16 +81,21 @@ class SegmentationAudio:
 
 
     def trim_audio_files(self):
-        with ThreadPoolExecutor() as executor:
-            for dirpath, dirnames, filenames in os.walk(self.audio_directory):
-                for i, filename in enumerate(filenames):
-                    audio_path = os.path.join(dirpath,filename)
-                    audio_ = AudioSegment.from_file(audio_path)
-                    trimmed_audio = audio_[:self.time_seconds * 1000]
-                    resample_audio = trimmed_audio.set_frame_rate(self.sample_rate)
-                    mono_audio = resample_audio.set_channels(1)
-                    output_trimmed_audios = os.path.join(self.save_directory,filename)
-                    mono_audio.export(output_trimmed_audios + ".wav",format="wav") 
+        for dirpath, dirnames, filenames in os.walk(self.audio_directory):
+            for i, filename in enumerate(filenames):
+                audio_path = os.path.join(dirpath, filename)
+                audio_ = AudioSegment.from_file(audio_path)
+                num_segments = len(audio_) // (self.time_seconds * 1000)
+                dir_initial = os.path.basename(dirpath)
+                filename = filename.replace(".ogg","")
+                for segment in range(num_segments):
+                    start_time = segment * self.time_seconds * 1000
+                    end_time = (segment + 1) * self.time_seconds * 1000
+                    trimmed_audio = audio_[start_time:end_time]
+                    resampled_audio = trimmed_audio.set_frame_rate(self.sample_rate)
+                    mono_audio = resampled_audio.set_channels(1)
+                    output_trimmed_audio = os.path.join(self.save_directory, f"{dir_initial}_{filename}_{segment}.wav")
+                    mono_audio.export(output_trimmed_audio, format="wav") 
 
         
 if __name__ == "__main__":
