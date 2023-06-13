@@ -5,7 +5,6 @@ from pydub import AudioSegment
 import shutil
 import re
 import librosa
-import numpy as np
 from sklearn.cluster import KMeans
 import os
 import whisper
@@ -26,7 +25,12 @@ import contextlib
 from sklearn.cluster import AgglomerativeClustering
 import numpy as np
 
+num_speakers = 2  # @param {type:"integer"}
 
+language = 'any'  # @param ['any', 'English']
+
+model_size = 'medium'  # @param ['tiny', 'base', 'small', 'medium', 'large']
+model = whisper.load_model(model_size)
 class DiarizationAudioFiles(object):
 
     def __init__(self, dir):
@@ -34,7 +38,7 @@ class DiarizationAudioFiles(object):
         self.audio = Audio()
 
     def duration_context_audio(self, directory):
-        with contextlib.closing(wave.open(directory, 'r')) as f:
+        with contextlib.closing(wave.opean(directory, 'r')) as f:
             frames = f.getnframes()
             rate = f.getframerate()
             duration = frames / float(rate)
@@ -91,18 +95,13 @@ class DiarizationAudioFiles(object):
         list_duration_audios, list_segments, list_audios = self.transcribe_segments_files()
         embeddings = np.zeros(shape=(len(list_segments), 192))
         for i, (segment, duration, audio_file) in enumerate(zip(list_segments, list_duration_audios, list_audios)):
-            embeddings[i] = diarization_audio.segment_embedding(segment[i], duration, audio_file)
+            embeddings[i] = self.segment_embedding(segment[i], duration, audio_file)
         embeddings = np.nan_to_num(embeddings)
         return embeddings
 
 
 if __name__ == "__main__":
-    num_speakers = 2  # @param {type:"integer"}
 
-    language = 'any'  # @param ['any', 'English']
-
-    model_size = 'medium'  # @param ['tiny', 'base', 'small', 'medium', 'large']
-    model = whisper.load_model(model_size)
     dir = "teste/"
     diarization_audio = DiarizationAudioFiles(dir)
     print("Hello World")
