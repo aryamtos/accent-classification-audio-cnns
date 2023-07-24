@@ -13,7 +13,6 @@ import os
 
 SAMPLE_RATE = 16000
 class Spectrogram:
-
     def __init__(self,MAX_WAVE_SIZE):
         self.MAX_WAVE_SIZE = MAX_WAVE_SIZE
 
