@@ -10,13 +10,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENV DATASET_TRAIN="dataset/train/"
-ENV DATASET_VAL="dataset/validation/"
-ENV MAX_WAVE_SIZE=195000
-ENV NOISE_VALUE=0.1
-ENV PATIENCE=25
-ENV N_EPOCHS=50
-ENV LR=0.0001
-ENV DECAY=0.001
-
-CMD ["python", "main.py", "train", "--dataset_train=$DATASET_TRAIN", "--dataset_val=$DATASET_VAL", "--max_wave_size=$MAX_WAVE_SIZE", "--noise_value=$NOISE_VALUE", "--patience=$PATIENCE", "--n_epochs=$N_EPOCHS", "--learning_rate=$LR", "--weight_decay_=$DECAY"]
+CMD ["python", "main.py", "train", "--dataset_train=dataset/train/", "--dataset_val=dataset/validation/", "--max_wave_size=195000", "--noise_value=0.1", "--patience=25", "--n_epochs=50", "--learning_rate=0.0001", "--weight_decay_=0.001"]
