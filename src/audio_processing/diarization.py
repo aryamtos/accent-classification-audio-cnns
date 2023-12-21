@@ -108,9 +108,5 @@ if __name__ == "__main__":
     print("Hello World")
 
     diarization_audio.transcript_by_speaker_identification()
-    list_duration_audios, list_segments, list_audios = diarization_audio.transcribe_segments_files()
-
+    '''list_duration_audios, list_segments, list_audios = diarization_audio.transcribe_segments_files()'''
     len(list_segments)
-
-
-
