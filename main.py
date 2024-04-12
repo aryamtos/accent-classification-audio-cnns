@@ -1,8 +1,9 @@
-from prepare_dataset import LoadAndPreprocessToModel
-from model import Conv1d1Lstm
-from dataloader import SpectrogramDataset
-from spectrogram import Spectrogram
-from training import TrainLoaderDataset
+from cnn1dlstm.prepare_dataset import LoadAndPreprocessToModel
+from cnn1dlstm.dataloader 
+from cnn1dlstm.model import Conv1d1Lstm
+from cnn1dlstm.dataloader import SpectrogramDataset
+from cnn1dlstm.spectrogram import Spectrogram
+from cnn1dlstm.training import TrainLoaderDataset
 import sys
 import os
 import argparse
