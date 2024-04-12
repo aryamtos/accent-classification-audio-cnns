@@ -501,7 +501,7 @@ for line in os.listdir(dir):
 
 from pydub import AudioSegment
 
-t1 = 0 * 1000 # works in milliseconds
+t1 = 0 * 1000 
 t2 = 20 * 60 * 1000
 
 newAudio = AudioSegment.from_wav("/content/4xjJY6vcBhBKYmb8H2cBhT_4.wav")
