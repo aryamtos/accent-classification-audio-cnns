@@ -3,7 +3,7 @@
 This repository showcases a classification task for Brazilian Portuguese using two model configurations: a 1D Convolutional Neural Network (CNN) combined with Long Short-Term Memory (LSTM), and a standalone 2D CNN. The CNN1D + LSTM model, based on <a href="https://github.com/wagnertostes/Classificacao-de-Sotaques-Brasileiros-usando-Redes-Neurais-Profundas/">Tostes'  work</a>, utilizes a <b>range of frequency values</b> from a spectrogram as input. Meanwhile, the CNN2D model processes images sized at 227x227 pixels.
 
 
-
+<small> Convolution 1D with LSTM </small>
 ![baseline](https://github.com/aryamtos/accent-classification-audio/assets/46492977/f8a19345-4f1d-4232-a43c-84c2800d5524)
 
 
