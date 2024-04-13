@@ -1,4 +1,4 @@
-# Accent Classification - Brazillian Portuguese
+# Accent Classification Brazillian Portuguese using CNN models
 
 # **Installation**
 
