@@ -4,7 +4,7 @@ This repository showcases a classification task for Brazilian Portuguese using t
 
 
 <small> Convolution 1D with LSTM </small>
-<center>img width="600" alt="accent" src="https://github.com/aryamtos/accent-classification-audio/assets/46492977/f8a19345-4f1d-4232-a43c-84c2800d5524"></center>
+<center><img width="600" alt="accent" src="https://github.com/aryamtos/accent-classification-audio/assets/46492977/f8a19345-4f1d-4232-a43c-84c2800d5524"></center>
 
 
 <small>Convolution 2D</small>
