@@ -22,7 +22,7 @@ This repository showcases a classification task for Brazilian Portuguese using t
 
 Two subsets of Spotify Podcasts ( Spotify A and Spotify B) more informations is presented in following repository: <a href="https://github.com/aryamtos/spotify-subset"> Spotify Subsets</a>
 
-### Installation
+### Experiments
 
 - **Local :**
 
