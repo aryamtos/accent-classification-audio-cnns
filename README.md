@@ -3,6 +3,9 @@
 This repository showcases a classification task for Brazilian Portuguese using two model configurations: a 1D Convolutional Neural Network (CNN) combined with Long Short-Term Memory (LSTM), and a standalone 2D CNN. The CNN1D + LSTM model, based on <a href="https://github.com/wagnertostes/Classificacao-de-Sotaques-Brasileiros-usando-Redes-Neurais-Profundas/">Tostes'  work</a>, utilizes a <b>range of frequency values</b> from a spectrogram as input. Meanwhile, the CNN2D model processes images sized at 227x227 pixels.
 
 
+
+### Models
+
 <small>Convolution 1D with LSTM</small>
 
 
@@ -10,12 +13,14 @@ This repository showcases a classification task for Brazilian Portuguese using t
 
 
 
-
 <small>Convolution 2D</small>
-
 
 <img width="600" style="text-align:center;" alt="cnn2d" src="https://github.com/aryamtos/accent-classification-audio/assets/46492977/2ac9a513-25c0-4813-83e3-98e71d0807af">
 
+
+### Datasets 
+
+Two subsets of Spotify Podcasts ( Spotify A and Spotify B) more informations is presented in following repository: <a href="https://github.com/aryamtos/spotify-subset"> Spotify Subsets</a>
 
 ### Installation
 
