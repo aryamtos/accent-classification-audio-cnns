@@ -1,6 +1,9 @@
 # Accent Classification Brazillian Portuguese using CNN models
 
-# **Installation**
+This repository showcases a classification task for Brazilian Portuguese using two model configurations: a 1D Convolutional Neural Network (CNN) combined with Long Short-Term Memory (LSTM), and a standalone 2D CNN. The CNN1D + LSTM model, based on <a href="https://github.com/wagnertostes/Classificacao-de-Sotaques-Brasileiros-usando-Redes-Neurais-Profundas/">Tostes'  work</a>, utilizes a <bold>range of frequency values</bold> from a spectrogram as input. Meanwhile, the CNN2D model processes images sized at 227x227 pixels.
+
+
+### Installation
 
 - **Local :**
 
