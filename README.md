@@ -29,11 +29,7 @@ docker images
 
 ```bash
 docker run -it --gpus all -v vol/:/vol/ --name accentBr -d accent:2.0
-```
-
-### Container
-
-```bash
 docker exec -it accentBr /bin/bash
 ```
+
 
