@@ -7,6 +7,11 @@ This repository showcases a classification task for Brazilian Portuguese using t
 ![baseline](https://github.com/aryamtos/accent-classification-audio/assets/46492977/f8a19345-4f1d-4232-a43c-84c2800d5524)
 
 
+<small>Convolution 2D</small>
+
+<img width="600" alt="Captura de Tela 2024-04-13 às 17 28 16" src="https://github.com/aryamtos/accent-classification-audio/assets/46492977/2ac9a513-25c0-4813-83e3-98e71d0807af">
+
+
 ### Installation
 
 - **Local :**
