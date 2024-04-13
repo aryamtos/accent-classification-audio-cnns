@@ -18,10 +18,22 @@ conda install --file requirements.txt
 conda list
 ```
 
-### Docker image 🐳
+### Build Docker image 🐳
 
 ```bash
-docker build -t accent:latest .
+docker build -t accent:2.0 .
 docker images
-docker run accent:latest 
 ```
+
+### Run Container Docker 
+
+```bash
+docker run -it --gpus all -v vol/:/vol/ --name accentBr -d accent:2.0
+```
+
+### Container
+
+```bash
+docker exec -it accentBr /bin/bash
+```
+
