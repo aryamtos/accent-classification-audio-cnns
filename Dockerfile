@@ -1,13 +1,18 @@
-FROM python:3.10
 
-WORKDIR /accent-classification-audio
+FROM nvcr.io/nvidia/pytorch:22.11-py3
 
-COPY requirements.txt .
+WORKDIR /segmentation/src/
 
-RUN apt-get update && apt-get install -y python3-pip 
-RUN apt-get --yes install libsndfile1
-RUN pip install -r requirements.txt
+
+ENV SHELL=/bin/bash
+#RUN pip install --upgrade pip
+#RUN pip install jupyterlab-horizon-theme
+#RUN pip install jupyterlab-git
+#RUN pip install jupyterlab-lsp
+#RUN pip install 'python-lsp-server[all]'
+#RUN pip install jupyterlab-system-monitor
+
 
 COPY . .
 
-CMD ["python", "main.py", "train", "--dataset_train=dataset/train/", "--dataset_val=dataset/validation/", "--max_wave_size=195000", "--noise_value=0.1", "--patience=25", "--n_epochs=50", "--learning_rate=0.0001", "--weight_decay_=0.001"]
+#CMD [ "jupyter","lab","--ip=0.0.0.0","--port=8900","--allow-root","--no-browser"]
