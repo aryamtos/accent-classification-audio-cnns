@@ -50,7 +50,7 @@ docker images
 ### Run Container Docker 
 
 ```bash
-docker run -it --gpus all -v vol/:/vol/ --name accentBr -d accent:2.0
+docker run -it --gpus all --ulimit memlock=-1 --ulimit stack=67108864 -v vol/:/vol/ --name accentBr -d accent:2.0
 docker exec -it accentBr /bin/bash
 ```
 
